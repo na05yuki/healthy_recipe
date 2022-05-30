@@ -12,6 +12,7 @@
 ### Association
 
 - has_many :recipes
+- has_many :comments
 
 ## recipes テーブル
 
@@ -29,3 +30,18 @@
 ### Association
 
 - belongs_to :user
+- has_many :comments
+
+## comments テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| comment_text | text       | null: false                    |
+| user         | references | null: false, foreign_key: true |
+| recipe       | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :recipes
