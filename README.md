@@ -23,8 +23,6 @@
 | time_required_id    | integer    | null: false                    |
 | number_of_people_id | integer    | null: false                    |
 | category_id         | integer    | null: false                    |
-| created_at          | date       | null: false                    |
-| updated_at          | date       | null: false                    |
 | user                | references | null: false, foreign_key: true |
 
 ### Association
