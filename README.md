@@ -7,7 +7,7 @@
 | nickname           | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
-| profile            | text   | null: false               |
+| profile            | text   |                           |
 
 ### Association
 
@@ -36,7 +36,7 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| comment_text | text       | null: false                    |
+| text         | text       | null: false                    |
 | user         | references | null: false, foreign_key: true |
 | recipe       | references | null: false, foreign_key: true |
 
