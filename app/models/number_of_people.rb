@@ -1,6 +1,6 @@
-class NemberOfPeople < ActiveHash::Base
+class NumberOfPeople < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
+    { id: 1, name: '--何人分か選択してください--' },
     { id: 2, name: '１人分' },
     { id: 3, name: '２人分' },
     { id: 4, name: '３人分' },
@@ -11,5 +11,5 @@ class NemberOfPeople < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :recipes
-  
+
   end

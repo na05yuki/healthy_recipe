@@ -1,6 +1,6 @@
 class Category < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
+    { id: 1, name: '--カテゴリーを選択してください--' },
     { id: 2, name: '低糖質' },
     { id: 3, name: '砂糖不使用' },
     { id: 4, name: 'グルテンフリー' },
@@ -12,5 +12,5 @@ class Category < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :recipes
-  
+
   end
