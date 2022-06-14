@@ -2,7 +2,8 @@
   <div class="recipes-box">
     <h1>レシピ投稿ページ</h1>
     <%= f.text_field :title, class:"title", placeholder:"料理名" %>
-    <%= f.text_area :explanation, class:"explanation", placeholder:"レシピ詳細" %>
+    <%= f.text_area :ingredient, class:"ingredient", placeholder:"材料" %>
+    <%= f.text_area :explanation, class:"explanation", placeholder:"調理方法" %>
     <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {}, {class:"time-required-select"}) %>
     <%= f.collection_select(:number_of_people_id, NumberOfPeople.all, :id, :name, {}, {class:"number-of-people-select"}) %>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>

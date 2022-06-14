@@ -8,8 +8,15 @@
 }
 
 .title {
-  height: 30px;
+  height: 40px;
   width: 300px;
+  margin: 20px;
+}
+
+.ingredient {
+  height: 250px;
+  width: 300px;
+  resize:none;
   margin: 20px;
 }
 
