@@ -19,6 +19,7 @@
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
 | title               | string     | null: false                    |
+| ingredient          | text       | null: false                    |
 | explanation         | text       | null: false                    |
 | time_required_id    | integer    | null: false                    |
 | number_of_people_id | integer    | null: false                    |
