@@ -1,3 +1,4 @@
 {
-  "intelephense.diagnostics.undefinedFunctions": true
+  "intelephense.diagnostics.undefinedFunctions": true,
+  "emmet.triggerExpansionOnTab": true
 }
