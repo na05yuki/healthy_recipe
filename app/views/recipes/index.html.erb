@@ -1,8 +1,28 @@
-healthy recipe トップページ
+<div class="main">
 
-<% if user_signed_in? %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
-<% else %>
-  <%= link_to "ログイン", new_user_session_path, class: "login" %>
-  <%= link_to "新規登録", new_user_registration_path, class: "sing-up" %>
-<% end %>
+  <h1>healthy recipe</h1>
+
+  <% if user_signed_in? %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+  <% else %>
+    <%= link_to "ログイン", new_user_session_path, class: "login" %>
+    <%= link_to "新規登録", new_user_registration_path, class: "sing-up" %>
+  <% end %>
+
+  <%= link_to "投稿する", new_recipe_path, class:"post" %>
+
+  <h2>レシピ一覧</h2>
+  <div class="contents-row">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe">
+        <div class="recipe-title">
+          <%= recipe.title %>
+        </div>
+        <div class="recipe-category">
+          <%= recipe.category.name %>
+        </div>
+        <%= image_tag recipe.image.variant(resize: '350x350'), class: 'recipe-image' if recipe.image.attached? %>
+      </div>
+    <% end %>
+  </div>
+</div>

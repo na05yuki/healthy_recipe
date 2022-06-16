@@ -1,0 +1,55 @@
+.recipes-box {
+  height:800px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  height: 40px;
+  width: 300px;
+  margin: 20px;
+}
+
+.ingredient {
+  height: 250px;
+  width: 300px;
+  resize:none;
+  margin: 20px;
+}
+
+.explanation {
+  height: 300px;
+  width: 300px;
+  resize:none;
+  margin-bottom: 20px;
+}
+
+.time-required-select{
+  height: 30px;
+  width: 230px;
+  margin-bottom: 10px;
+}
+
+.number-of-people-select{
+  height: 30px;
+  width: 230px;
+  margin-bottom: 10px;
+}
+
+.category-select{
+  height: 30px;
+  width: 230px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 200px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: orange;
+  color: white;
+}
