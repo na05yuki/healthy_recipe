@@ -1,14 +1,14 @@
 <div class="main">
+  <div class="main-top">
+    <h1>healthy recipe</h1>
 
-  <h1>healthy recipe</h1>
-
-  <% if user_signed_in? %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
-  <% else %>
-    <%= link_to "ログイン", new_user_session_path, class: "login" %>
-    <%= link_to "新規登録", new_user_registration_path, class: "sing-up" %>
-  <% end %>
-
+    <% if user_signed_in? %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "login" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "sing-up" %>
+    <% end %>
+  </div>
   <%= link_to "投稿する", new_recipe_path, class:"post" %>
 
   <h2>レシピ一覧</h2>
@@ -21,6 +21,7 @@
         <div class="recipe-category">
           <%= recipe.category.name %>
         </div>
+        <%= link_to 'レシピ詳細', recipe_path(recipe.id), method: :show %>
         <%= image_tag recipe.image.variant(resize: '350x350'), class: 'recipe-image' if recipe.image.attached? %>
       </div>
     <% end %>
