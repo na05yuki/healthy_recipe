@@ -12,9 +12,8 @@
   <%= link_to "投稿する", new_recipe_path, class:"post" %>
 
   <h2>レシピ一覧</h2>
-  <div class="contents row">
+  <div class="contents-row">
     <% @recipes.each do |recipe| %>
-      <%# <div class="content_post" style="background-image: url(<%= recipe.image %>);"> %>
       <div class="recipe">
         <div class="recipe-title">
           <%= recipe.title %>
@@ -22,6 +21,7 @@
         <div class="recipe-category">
           <%= recipe.category.name %>
         </div>
+        <%= image_tag recipe.image.variant(resize: '350x350'), class: 'recipe-image' if recipe.image.attached? %>
       </div>
     <% end %>
   </div>

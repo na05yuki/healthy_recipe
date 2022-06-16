@@ -1,6 +1,20 @@
 <%= form_with model: @recipe, url:recipes_path, local: true do |f| %>
   <div class="recipes-box">
     <h1>レシピ投稿ページ</h1>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        料理画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"recipe-image" %>
+      </div>
+    </div>
+
     <%= f.text_field :title, class:"title", placeholder:"料理名" %>
     <%= f.text_area :ingredient, class:"ingredient", placeholder:"材料" %>
     <%= f.text_area :explanation, class:"explanation", placeholder:"調理方法" %>
