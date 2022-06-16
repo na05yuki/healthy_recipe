@@ -12,6 +12,7 @@ class Recipe < ApplicationRecord
     validates :title
     validates :ingredient
     validates :explanation
+    validates :image
 
     with_options numericality: { other_than: 1, message: 'を選択してください' } do
       validates :time_required_id
