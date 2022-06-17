@@ -1,15 +1,22 @@
 .main-top{
   height: 350px;
-  background-color: orange;
-  background-image: image-url('pimonova150700006.jpeg');
+  background-color: white;
+  background-image: image-url('23128958_s.jpg');
   background-position: top center;
   background-size: contain;
   background-repeat: no-repeat;
-  
 }
 
 h1{
   text-align: center;
+  font-size: 35px;
+}
+
+.lists-left{
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 h2{
