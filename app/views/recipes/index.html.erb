@@ -23,7 +23,7 @@
         <div class="recipe-category">
           <%= recipe.category.name %>
         </div>
-        <%= link_to 'レシピ詳細', recipe_path(recipe.id), method: :show %>
+        <%= link_to 'レシピ詳細', recipe_path(recipe.id), method: :get %>
         <%= image_tag recipe.image.variant(resize: '350x350'), class: 'recipe-image' if recipe.image.attached? %>
       </div>
     <% end %>
