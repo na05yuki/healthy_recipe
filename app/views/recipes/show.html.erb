@@ -1,0 +1,37 @@
+<div class="recipe-show">
+  <div class="recipe-box">
+    <h2 class="name">
+      <%= @recipe.title %>
+    </h2>
+
+    <%= @recipe.user.nickname %>
+    <div class="recipe-img-content">
+      <%= image_tag @recipe.image ,class:"recipe-box-img" %>
+    </div>
+    <div class="recipe-show-box">
+      <div class="item-ingredient">
+        <%= @recipe.ingredient %>
+      </div>
+      <div class="recipe-explanation">
+        <%= @recipe.explanation %>
+      </div>
+
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-item">調理時間</th>
+            <td class="detail-value"><%= @recipe.time_required.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">何人分</th>
+            <td class="detail-value"><%= @recipe.number_of_people.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">カテゴリー</th>
+            <td class="detail-value"><%= @recipe.category.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

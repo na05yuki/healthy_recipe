@@ -1,10 +1,14 @@
 .recipes-box {
-  height:800px;
+  height:1000px;
   background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.recipe-new-image{
+  height: 200px;
 }
 
 .title {
@@ -47,7 +51,7 @@
 
 .btn {
   width: 200px;
-  margin-top: 20px;
+  margin: 30px;
   padding: 15px;
   border: 1px solid white;
   background-color: orange;

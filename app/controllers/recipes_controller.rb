@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: :index
+
   def index
     @recipes = Recipe.order("created_at DESC")
   end
@@ -14,6 +16,10 @@ class RecipesController < ApplicationController
     else
       render :new
    end
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
   end
 
   private
