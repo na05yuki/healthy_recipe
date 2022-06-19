@@ -1,0 +1,29 @@
+<%= form_with model: @recipe, url:recipes_path, local: true do |f| %>
+  <div class="recipes-box">
+    <h1>レシピ編集ページ</h1>
+
+    <div class="img-upload">
+      <%= image_tag "ktn0005-001.jpeg", class:"recipe-new-image" %>
+      <div class="weight-bold-text">
+        <p>料理画像</p>
+        <span class="indispensable">【必須】</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"recipe-image" %>
+      </div>
+    </div>
+
+    <%= f.text_field :title, class:"title", placeholder:"料理名" %>
+    <%= f.text_area :ingredient, class:"ingredient", placeholder:"材料" %>
+    <%= f.text_area :explanation, class:"explanation", placeholder:"調理方法" %>
+    <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {}, {class:"time-required-select"}) %>
+    <%= f.collection_select(:number_of_people_id, NumberOfPeople.all, :id, :name, {}, {class:"number-of-people-select"}) %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+    <%= f.submit "投稿する" ,class:"btn" %>
+  </div>
+<% end %>
+
+<%= link_to "トップページに戻る", root_path, class:"recipe-top"%>
