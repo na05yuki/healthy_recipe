@@ -8,7 +8,8 @@
 
     <% if user_signed_in? %>
       <% if current_user == @recipe.user %>
-        <%= link_to "商品の編集", edit_recipe_path(@recipe.id), method: :get, class: "recipe-edit" %>
+        <%= link_to "レシピ編集", edit_recipe_path(@recipe.id), method: :get, class: "recipe-edit" %>
+        <%= link_to "レシピ削除", recipe_path(@recipe.id), method: :delete, class:"recipe-destroy" %>
       <% end %>
     <% end %>
 
