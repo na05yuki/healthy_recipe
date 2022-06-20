@@ -1,6 +1,6 @@
 <%= form_with model: @recipe, local: true do |f| %>
   <div class="recipes-box">
-    <h1>レシピ投稿ページ</h1>
+    <h1>レシピ編集ページ</h1>
 
     <div class="img-upload">
       <%= image_tag "ktn0005-001.jpeg", class:"recipe-new-image" %>
@@ -22,7 +22,7 @@
     <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {}, {class:"time-required-select"}) %>
     <%= f.collection_select(:number_of_people_id, NumberOfPeople.all, :id, :name, {}, {class:"number-of-people-select"}) %>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
-    <%= f.submit "投稿する" ,class:"btn" %>
+    <%= f.submit "編集完了する" ,class:"btn" %>
   </div>
 <% end %>
 

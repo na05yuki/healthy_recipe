@@ -5,6 +5,13 @@
     </h2>
 
     <%= @recipe.user.nickname %>
+
+    <% if user_signed_in? %>
+      <% if current_user == @recipe.user %>
+        <%= link_to "商品の編集", edit_recipe_path(@recipe.id), method: :get, class: "recipe-edit" %>
+      <% end %>
+    <% end %>
+
     <div class="recipe-img-content">
       <%= image_tag @recipe.image ,class:"recipe-box-img" %>
     </div>
@@ -34,4 +41,6 @@
       </table>
     </div>
   </div>
+
+  <%= link_to "トップページに戻る", root_path, class:"recipe-top"%>
 </div>
