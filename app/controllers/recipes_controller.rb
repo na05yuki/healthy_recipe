@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_recipe, only: [:show, :edit]
 
   def index
     @recipes = Recipe.order("created_at DESC")
@@ -19,11 +20,9 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
@@ -40,5 +39,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :ingredient, :explanation, :time_required_id, :number_of_people_id, :category_id, :image).merge(user_id: current_user.id)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
   end
 end
