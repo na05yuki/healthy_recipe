@@ -1,4 +1,4 @@
-<%= form_with model: @recipe, url:recipes_path, local: true do |f| %>
+<%= form_with model: @recipe, local: true do |f| %>
   <div class="recipes-box">
     <h1>レシピ編集ページ</h1>
 
@@ -22,7 +22,7 @@
     <%= f.collection_select(:time_required_id, TimeRequired.all, :id, :name, {}, {class:"time-required-select"}) %>
     <%= f.collection_select(:number_of_people_id, NumberOfPeople.all, :id, :name, {}, {class:"number-of-people-select"}) %>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
-    <%= f.submit "投稿する" ,class:"btn" %>
+    <%= f.submit "編集完了する" ,class:"btn" %>
   </div>
 <% end %>
 
