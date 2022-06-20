@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_recipe, only: [:show, :edit]
+  before_action :move_to_index, only: [:edit, :update]
 
   def index
     @recipes = Recipe.order("created_at DESC")
@@ -43,5 +44,9 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path unless current_user.id == @recipe.user_id
   end
 end
