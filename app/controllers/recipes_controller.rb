@@ -43,6 +43,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  def category
+    @recipes = @q.result
+    category_id = params[:q][:category_id_eq]
+    @category = Category.find_by(id: category_id)
+  end
+
 
   private
 
