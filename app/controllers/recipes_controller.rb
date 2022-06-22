@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.order("created_at DESC")
+    @q = Recipe.ransack(params[:q])
   end
 
   def new
@@ -44,9 +45,8 @@ class RecipesController < ApplicationController
   end
 
   def category
+    @q = Recipe.ransack(params[:q])
     @recipes = @q.result
-    category_id = params[:q][:category_id_eq]
-    @category = Category.find_by(id: category_id)
   end
 
 
