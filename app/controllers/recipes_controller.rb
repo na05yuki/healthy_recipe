@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.order("created_at DESC")
-    @q = Recipe.ransack(params[:q])
   end
 
   def new
