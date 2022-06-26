@@ -1,17 +1,23 @@
+<%= render "shared/header" %>
+
 <div class="recipe-show">
   <div class="recipe-box">
-    <h1 class="name">
+    <h1 class="recipe-name">
       <%= @recipe.title %>
     </h1>
 
-    <%= @recipe.user.nickname %>
+    <div class="recipe-username">
+      投稿者：<%= @recipe.user.nickname %>
+    </div>
 
-    <% if user_signed_in? %>
-      <% if current_user == @recipe.user %>
-        <%= link_to "レシピ編集", edit_recipe_path(@recipe.id), method: :get, class: "recipe-edit" %>
-        <%= link_to "レシピ削除", recipe_path(@recipe.id), method: :delete, class:"recipe-destroy" %>
+    <div class="signedin-user-menu">
+      <% if user_signed_in? %>
+        <% if current_user == @recipe.user %>
+          <%= link_to "レシピ編集", edit_recipe_path(@recipe.id), method: :get, class: "recipe-edit" %>
+          <%= link_to "レシピ削除", recipe_path(@recipe.id), method: :delete, class:"recipe-destroy" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
 
     <div class="recipe-img-content">
       <%= image_tag @recipe.image ,class:"recipe-box-img" %>
