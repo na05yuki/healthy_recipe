@@ -1,28 +1,31 @@
-<h1>カテゴリー検索</h1>
+<div class="category-all">
+  <h1 class="category-title">カテゴリー検索</h1>
 
-  <%= search_form_for @q, url: category_recipes_path do |f| %>
-    <%= f.collection_select :category_id_eq, Category.all, :id, :name %>
-    <%= f.submit '検索' %>
-  <% end %>
-
-<h2>レシピ一覧</h2>
-<div class="contents-row">
-  <% if @recipes.present? %>
-    <% @recipes.each do |recipe| %>
-      <div class="recipe">
-        <div class="recipe-title">
-          <%= recipe.title %>
-        </div>
-        <div class="recipe-category">
-          <%= recipe.category.name %>
-        </div>
-        <%= link_to 'レシピ詳細', recipe_path(recipe.id), method: :get %>
-        <%= image_tag recipe.image.variant(resize: '350x350'), class: 'recipe-image' if recipe.image.attached? %>
-      </div>
+  <div class="category-seach">
+    <%= search_form_for @q, url: category_recipes_path do |f| %>
+      <%= f.collection_select :category_id_eq, Category.all, :id, :name %>
+      <%= f.submit '検索' %>
     <% end %>
-  <% else %>
-    カテゴリーに該当するレシピはありません。
-  <% end%>
-</div>
+  </div>
 
+  <h2 class="recipe-all">レシピ一覧</h2>
+  <div class="contents-row">
+    <% if @recipes.present? %>
+      <% @recipes.each do |recipe| %>
+        <div class="recipe">
+          <%= image_tag recipe.image.variant(resize: '350x350'), class: 'recipe-image' if recipe.image.attached? %>
+          <div class="recipe-title">
+            <%= recipe.title %>
+          </div>
+          <div class="recipe-category">
+            <%= recipe.category.name %>
+          </div>
+          <%= link_to 'レシピ詳細', recipe_path(recipe.id), method: :get %>
+        </div>
+      <% end %>
+    <% else %>
+      カテゴリーに該当するレシピの投稿がありません。
+    <% end%>
+  </div>
+</div>
 <%= link_to "トップページに戻る", root_path, class:"recipe-top"%>
