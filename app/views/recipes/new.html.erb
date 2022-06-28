@@ -24,6 +24,7 @@
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
     <%= f.submit "投稿する" ,class:"btn" %>
   </div>
+  
 <% end %>
 
 <%= link_to "トップページに戻る", root_path, class:"recipe-top"%>

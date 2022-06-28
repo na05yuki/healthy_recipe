@@ -1,0 +1,18 @@
+.category-all {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.category-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.category-seach {
+  text-align: center;
+  margin: 20px;
+}
+
+.recipe-all {
+  margin-bottom: 20px;
+}
