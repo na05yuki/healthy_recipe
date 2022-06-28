@@ -9,10 +9,9 @@ class Category < ActiveHash::Base
     { id: 7, name: '冷え性対策' },
     { id: 8, name: '鉄分豊富' },
     { id: 9, name: '野菜豊富' },
-    { id: 10, name: 'その他' },
+    { id: 10, name: 'その他' }
   ]
 
   include ActiveHash::Associations
   has_many :recipes
-
-  end
+end

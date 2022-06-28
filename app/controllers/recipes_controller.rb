@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update]
 
   def index
-    @recipes = Recipe.order("created_at DESC")
+    @recipes = Recipe.order('created_at DESC')
   end
 
   def new
@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
       redirect_to root_path
     else
       render :new
-   end
+    end
   end
 
   def show
@@ -51,7 +51,8 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredient, :explanation, :time_required_id, :number_of_people_id, :category_id, :image).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:title, :ingredient, :explanation, :time_required_id, :number_of_people_id, :category_id,
+                                   :image).merge(user_id: current_user.id)
   end
 
   def set_recipe
