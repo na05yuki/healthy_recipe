@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :recipes
-  has_many :comments
+  has_many :favorites
 
   validates :nickname, presence: true, uniqueness: true
 
