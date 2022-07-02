@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     collection do
       get 'category'
     end
+    resources :favorites, only:[:create, :destroy]
   end
 end
